@@ -1,0 +1,84 @@
+﻿<%- include('partials/header') %>
+
+<div class="form-container">
+
+<div class=" vdivide" style="margin-top:80px;">
+<div class="col-sm-6 text-center" style="margin-top:80px;"> <img src="images/logo.png" />
+</div>
+<div class="col-sm-4">
+
+
+<h2>Login</h2>
+<% if(locals.userexist) { %>
+        <div class="alert alert-danger"><%= userexist %></div>
+    <% } %>
+    <% if(locals.error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <% if(locals.success) { %>
+        <div class="alert alert-success"><%= success %></div>
+    <% } %>
+    <form method="post">
+        <div class="form-group row">
+        <label for="username" class="col-sm-2 form-control-label">Email</label>
+         <div class="col-sm-10">
+            <input type="email" name="username" id="username" placeholder="Email" autocomplete="on" maxlength="40" value="<%= locals.username || '' %>" class="form-control" required />
+        </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="password" class="col-sm-2 form-control-label">Password</label>
+            <div class="col-sm-10">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password" autocomplete="off" maxlength="16" required />
+        </div>
+        </div>
+
+        <div class="form-group row">
+        <label class="col-sm-2">Role</label>
+    <div class="col-sm-10">
+      <div class="radio-inline">
+        <label>
+          <input type="radio" name="inlineRadioOptions" id="inlineRadioOptions1" value="option1" checked>
+          Administrator
+        </label>
+      </div>
+      <div class="radio-inline">
+        <label>
+          <input type="radio" name="inlineRadioOptions" id="inlineRadioOptions2" value="option2">
+          Counsellor
+        </label>
+      </div>
+      <div class="radio-inline">
+        <label>
+          <input type="radio" name="inlineRadioOptions" id="inlineRadioOptions3" value="option3">
+          Student
+        </label>
+      </div>
+      <div class="radio-inline">
+        <label>
+          <input type="radio" name="inlineRadioOptions" id="inlineRadioOptions4" value="option3">
+          Trainer
+        </label>
+      </div>
+    </div>
+  </div>
+
+        <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+
+        <div class=" col-sm-10">
+        <div><a href="/forgotpassword" >I forgot my Password</a>
+        </div>        
+        </div>
+        <div class=" col-sm-20">
+        <div><a href="/register" class="btn btn-link">New User? Sign up here</a>
+        </div>
+        </div>    
+          
+    </form>
+</div>
+</div>
+</div>
+<%- include('partials/footer') %>

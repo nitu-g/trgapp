@@ -1,0 +1,135 @@
+<!-- index.ejs is default file generated. putting here our code -->
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>Fostering Linux</title>
+   <!--
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+-->
+    <script src="./client/cssjs/angular.min.js"></script>
+    <script src="client/cssjs/angular-ui-router.min.js"></script>
+    <script src="client/cssjs/angular.js"></script>
+    <script src="client/app.js"></script>
+    <script src="client/inquiry/inquiry.service.js"></script>
+    <script src="client/inquiry/submit/index.controller.js"></script>
+    <script src="client/inquiry/viewall/index.controller.js"></script>
+    <script src="client/course/getall/index.controller.js"></script>
+    <link href="client/app-content/app.css" rel="stylesheet" />
+
+
+    <link href="client/cssjs/bootstrap.min.css" rel="stylesheet">
+    <script src="client/cssjs/jquery.min.js"></script>
+    <script src="client/cssjs/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="client/cssjs/datepicker.css">
+    <link rel="stylesheet" href="client/cssjs/upload.css">
+    <link rel="stylesheet" href="client/cssjs/main.css">
+    <script src="client/cssjs/bootstrap-datepicker.js"></script>
+
+    <style type="text/css">
+    .bs-example{
+    margin: 100px;
+    }
+    .nav-left{
+    margin-left: 30px;
+    }
+    </style>
+
+  </head>
+  
+    <h1>Welcome to Training Management System at Fostering Linux !!</h1>
+    <body ng-app="trainingApp" ng-init="course1='RHCE  '; course2='  Openstack'">
+    <div>
+        <marquee>
+        {{course1}} {{course2}}
+        </marquee>
+    </div>
+    <!--
+    <script>
+        var app = angular.module('myAngularApp', []);
+    </script>
+    -->
+    </body>
+
+<div ng-app="trainingApp">      
+<header>
+  <nav role="navigation" class="navbar navbar-default">
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown nav-left ">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">InquiryMenu <b class="caret"></b></a>
+          <ul role="menu" class="dropdown-menu">
+          <li><a ui-sref="submitInquiry">SubmitInquiry</a></li>
+          <li><a ui-sref="ViewInquiry">ViewInquiry</a></li>
+          <li><a ui-sref="EditInquiry">EditInquiry</a></li>
+          <li><a ui-sref="ViewAllInquiries">ViewAllInquiries</a></li>
+          </ul>
+        </li>
+        <li class="dropdown nav-left ">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">EnrollMentMenu <b class="caret"></b></a>
+          <ul role="menu" class="dropdown-menu">
+          <li><a ui-sref="CreateEnrollMent">CreateEnrollMent</a></li>
+          <li><a ui-sref="ViewAllEnrollMents">ViewAllEnrollMents</a></li>  
+          </ul>
+        </li>
+        <li class="dropdown nav-left ">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">ResourcingMenu <b class="caret"></b></a>
+          <ul role="menu" class="dropdown-menu">
+          <li><a ui-sref="TrainerDetails">TrainerDetails</a></li>
+          <li><a ui-sref="PhysicalLabSpace">LabSpaceDetails</a></li> 
+          <li><a ui-sref="Book Inventory">BookDetails</a></li> 
+          </ul>
+          </li>
+          <li class="dropdown nav-left ">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">CourseList <b class="caret"></b></a>
+          <ul role="menu" class="dropdown-menu"> 
+          <li><a ui-sref="getAllCourse">GetCourseList</a></li>
+          </ul>
+          </li>
+        <li class="dropdown nav-left ">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">ReportMenu <b class="caret"></b></a>
+          <ul role="menu" class="dropdown-menu">
+          <li><a ui-sref="InquiryReport">InquiryReport</a></li>
+          <li><a ui-sref="EnrollMentReport">EnrollMentReport</a></li>  
+          </ul>
+        </li>
+      </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown nav-left ">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Hi {{user.firstName}}<b class="caret"></b></a>
+              <ul role="menu" class="dropdown-menu">
+              <li ng-class="{active: activeTab === 'account'}"><a ui-sref="account">Account</a></li>
+              <li><a href="/login" target="_self">Logout</a></li>
+              </ul>
+            </li>
+          </ul>   
+</div>
+</nav>
+
+<div class="flash-message" ng-if="flash">
+  <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
+    </div>
+</header>
+</div>
+  
+
+<!-- main -->
+    <div ui-view></div>
+
+    <!-- footer -->
+    <footer></footer>
+
+    <script src="client/cssjs/xlsx.full.min.js"></script>
+
+    <script src="client/cssjs/ods.js"></script>
+
+    <script src="client/cssjs/ui-grid.min.js"></script>
+
+    <link rel="stylesheet" href="client/cssjs/ui-grid.min.css" />
+
+
+
+</html> 
